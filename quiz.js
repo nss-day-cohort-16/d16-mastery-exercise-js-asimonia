@@ -45,7 +45,37 @@ charInput.addEventListener("keydown", function(event) {
 	}
 });
 
+/*
+	Main console log function below
+
+task:
+concatenate:    spaces + char
+
+given: height = 7
+spaces:  (height - 1) - i 
+char: 2i + 1
+
+(spaces, char)
+
+123456*  			(6, 1)		
+12345***			(5, 3)
+1234*****			(4, 5)
+123*******			(3, 7)
+12*********			(2, 9)
+1***********		(1, 11)
+*************		(0, 13)
+
+*/
 
 function tree(obj) {
-	console.log(obj);
+	var height = obj.height;
+	var char = obj.char;
+
+	for (var i = 0; i < height; i++) {
+		var spaces = (height - 1) - i;
+		var numChar = 2 * i + 1;
+		console.log(" ".repeat(spaces) + char.repeat(numChar));
+	}
+
 }
+
